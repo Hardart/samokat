@@ -17,19 +17,19 @@ class LoginController {
       await page.goto(LOGIN_URL)
 
       // Вводим логин и пароль
-      await page.type('#phoneNumber', '9374477523')
-      await page.type('#password', '02006130')
+      // await page.type('#phoneNumber', '9374477523')
+      // await page.type('#password', '02006130')
 
-      // Отправляем форму и ждем завершения
-      await Promise.all([
-        page.waitForNavigation({ waitUntil: 'networkidle0' }),
-        page.click('button[type="submit"]'),
-      ])
+      // // Отправляем форму и ждем завершения
+      // await Promise.all([
+      //   page.waitForNavigation({ waitUntil: 'networkidle0' }),
+      //   page.click('button[type="submit"]'),
+      // ])
 
-      await Promise.all([
-        page.waitForNavigation({ waitUntil: 'networkidle0' }),
-        page.click('a[href="/timesheet"]'),
-      ])
+      // await Promise.all([
+      //   page.waitForNavigation({ waitUntil: 'networkidle0' }),
+      //   page.click('a[href="/timesheet"]'),
+      // ])
       //   await page.goto(SMENA_URL)
 
       // page.on('response', async (response) => {
@@ -60,13 +60,14 @@ class LoginController {
       //   })
 
       // Переход на страницу dashboard
-      await page.waitForSelector('.EmployeeInfo__container--faf7')
+      // await page.waitForSelector('.EmployeeInfo__container--faf7')
       // Можно дальше парсить нужные данные
       const content = await page.content()
-      const $ = cheerio.load(content)
-      $('.EmployeeInfo__container--faf7').each((i, el) => {
-        array.push($(el).children('.EmployeeInfo__name--da9c').text())
-      })
+      // const $ = cheerio.load(content)
+      // $('.EmployeeInfo__container--faf7').each((i, el) => {
+      //   array.push($(el).children('.EmployeeInfo__name--da9c').text())
+      // })
+      console.log(content)
 
       await browser.close()
     }
