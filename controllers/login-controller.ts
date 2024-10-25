@@ -9,7 +9,7 @@ class LoginController {
     async function parse() {
       const browser = await puppeteer.launch({
         headless: false,
-        args: ['--no-sandbox'],
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
       })
       const page = await browser.newPage()
 
