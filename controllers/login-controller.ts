@@ -7,7 +7,10 @@ class LoginController {
   async request(req: Request, res: Response, next: NextFunction) {
     let array: string[] = []
     async function parse() {
-      const browser = await puppeteer.launch({ headless: false })
+      const browser = await puppeteer.launch({
+        headless: false,
+        args: ['--no-sandbox'],
+      })
       const page = await browser.newPage()
 
       // Открываем страницу логина
