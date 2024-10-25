@@ -13,6 +13,7 @@ class LoginController {
         env: {
           DISPLAY: ':10.0',
         },
+        executablePath: '/usr/bin/google-chrome',
       })
       const page = await browser.newPage()
 
