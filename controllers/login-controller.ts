@@ -70,7 +70,7 @@ class LoginController {
 
     await parse()
 
-    res.json({ status: array })
+    res.json({ data: array })
   }
 }
 
